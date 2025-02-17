@@ -39,6 +39,28 @@ CloseButton.TextSize = 20
 CloseButton.Font = Enum.Font.SourceSans
 CloseButton.Parent = TitleBar
 
+-- Hover effect for CloseButton
+CloseButton.MouseEnter:Connect(function()
+    CloseButton.TextColor3 = Color3.new(1, 0, 0)
+end)
+
+CloseButton.MouseLeave:Connect(function()
+    CloseButton.TextColor3 = Color3.new(1, 1, 1)
+end)
+
 CloseButton.MouseButton1Click:Connect(function()
     ScreenGui:Destroy()
 end)
+
+-- Optional: Add a title text label
+local TitleLabel = Instance.new("TextLabel")
+TitleLabel.Name = "TitleLabel"
+TitleLabel.Position = UDim2.new(0, 10, 0, 0)
+TitleLabel.Size = UDim2.new(0, 200, 1, 0)
+TitleLabel.BackgroundTransparency = 1
+TitleLabel.Text = "Custom Library UI"
+TitleLabel.TextColor3 = Color3.new(1, 1, 1)
+TitleLabel.TextSize = 18
+TitleLabel.Font = Enum.Font.SourceSansBold
+TitleLabel.TextXAlignment = Enum.TextXAlignment.Left
+TitleLabel.Parent = TitleBar
